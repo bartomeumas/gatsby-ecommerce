@@ -1,34 +1,19 @@
 import * as React from "react"
+import styled from "styled-components"
+
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
+  <HeaderWrapper>
+    <Link to="/" className="site-title">
+      {siteTitle}
+    </Link>
+    <LinksWrapper>
+      <Link to="/products">All products</Link>
+      <Link to="/cart">My Cart</Link>
+    </LinksWrapper>
+  </HeaderWrapper>
 )
 
 Header.propTypes = {
@@ -40,3 +25,33 @@ Header.defaultProps = {
 }
 
 export default Header
+
+const HeaderWrapper = styled.header`
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+
+  .site-title {
+    font-weight: bold;
+    color: #014c40;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+      Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+    :hover {
+      text-decoration: underline;
+    }
+  }
+`
+const LinksWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 40px;
+`
