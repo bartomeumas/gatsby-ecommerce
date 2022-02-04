@@ -17,7 +17,7 @@ const ProductRow = ({ item }) => {
       <DeleteButton
         onClick={() => removeLineItem(product.variants[0]?.shopifyId)}
       >
-        Remove
+        Eliminar
       </DeleteButton>
     </Wrapper>
   )

@@ -6,38 +6,30 @@ import useStore from "../context/StoreContext"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import ProductRow from "../components/ProductRow"
-import PrimaryButton from "../components/PrimaryButton"
 
-const Cart = () => {
-  const { cart, checkout } = useStore()
+const Liked = () => {
+  const { liked } = useStore()
 
   return (
     <Layout>
-      <Seo title="Mi carrito" />
+      <Seo title="Mis productos favoritos" />
       <Wrapper>
         <HeaderWrapper>
           <Text>Producto</Text>
           <Text>Cantidad</Text>
           <Text>Eliminar</Text>
         </HeaderWrapper>
-        {cart.length > 0 ? (
-          cart.map((item, index) => <ProductRow key={index} item={item} />)
+        {liked.length > 0 ? (
+          liked.map((item, index) => <ProductRow key={index} item={item} />)
         ) : (
-          <Text>Tu carrito está vacío. Añade productos a tu carrito.</Text>
+          <Text>No tienes productos favoritos.</Text>
         )}
-        <ButtonWrapper>
-          <PrimaryButton
-            text="Pagar"
-            onClick={() => window.open(checkout.webUrl)}
-            disabled={cart.length === 0}
-          />
-        </ButtonWrapper>
       </Wrapper>
     </Layout>
   )
 }
 
-export default Cart
+export default Liked
 
 const Wrapper = styled.div`
   margin: 40px;
@@ -52,9 +44,4 @@ const HeaderWrapper = styled.div`
 const Text = styled.p`
   font-weight: 600;
   font-size: 14px;
-`
-
-const ButtonWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
 `

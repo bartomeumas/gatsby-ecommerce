@@ -12,8 +12,10 @@ const client = Client.buildClient(
 
 const defaultValues = {
   cart: [],
+  liked: [],
   loading: false,
   addVariantToCart: () => {},
+  addVariantToLiked: () => {},
   removeLineItem: () => {},
   client,
   checkout: {
@@ -30,6 +32,7 @@ const localStorageKey = `shopify_checkout_id`
 
 export const StoreProvider = ({ children }) => {
   const [cart, setCart] = useState(defaultValues.cart)
+  const [liked, setLiked] = useState(defaultValues.liked)
   const [checkout, setCheckout] = useState(defaultValues.checkout)
   const [loading, setLoading] = useState(false)
 
