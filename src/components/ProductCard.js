@@ -2,15 +2,19 @@ import React from "react"
 import { navigate } from "gatsby-link"
 import styled from "styled-components"
 import useStore from "../context/StoreContext"
+import { FcLike } from "react-icons/fc"
 
 const ProductCard = ({ product }) => {
-  const { addVariantToCart } = useStore()
+  const { addVariantToCart, addVariantToLiked } = useStore()
 
   return (
     <Wrapper>
       <AddButton onClick={() => addVariantToCart(product, 1)}>
         <p>+</p>
       </AddButton>
+      <LikeButton onClick={() => addVariantToLiked(product)}>
+        <FcLike />
+      </LikeButton>
       <ContentWrapper onClick={() => navigate(`${product.handle}`)}>
         <Image src={product.images[0]?.src} />
         <TextWrapper>
@@ -76,6 +80,38 @@ const AddButton = styled.div`
   position: absolute;
   top: 20px;
   right: 20px;
+  background: #014c40;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  :hover {
+    transform: scale(1.2);
+    transition: 0.2s;
+  }
+
+  p {
+    margin: 0;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    line-height: 0;
+
+    @media not all and (min-resolution: 0.001dpcm) {
+      @supports (-webkit-appearance: none) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+`
+const LikeButton = styled.div`
+  position: absolute;
+  top: 20px;
+  left: 20px;
   background: #014c40;
   padding: 10px;
   width: 40px;

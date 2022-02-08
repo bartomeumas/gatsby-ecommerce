@@ -1,0 +1,3 @@
+Arreglar carousel 
+Filtrar productos por tipo
+Añadir boton de like

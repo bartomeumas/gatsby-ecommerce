@@ -121,10 +121,45 @@ export const StoreProvider = ({ children }) => {
       setCart(updatedCart)
 
       setLoading(false)
-      alert("Item added to cart!")
+      alert("El producto se añadió al carrito.")
     } catch (error) {
       setLoading(false)
       console.error(`Error in addVariantToCart: ${error}`)
+    }
+  }
+  const addVariantToLiked = async product => {
+    setLoading(true)
+
+    const variantId = product.variants[0]?.shopifyId
+
+    try {
+      let updatedLiked = []
+      if (liked.length > 0) {
+        const itemIsInLiked = liked.find(
+          item => item.product.variants[0]?.shopifyId === variantId
+        )
+
+        if (itemIsInLiked) {
+          const newProduct = {
+            product: { ...itemIsInLiked.product },
+          }
+          const otherItems = liked.filter(
+            item => item.product.variants[0]?.shopifyId !== variantId
+          )
+          updatedLiked = [...otherItems, newProduct]
+        } else {
+          updatedLiked = liked.concat([{ product }])
+        }
+      } else {
+        updatedLiked = [{ product }]
+      }
+      setLiked(updatedLiked, 1)
+
+      setLoading(false)
+      alert("El producto se añadió a tus favoritos.")
+    } catch (error) {
+      setLoading(false)
+      console.error(`Error in addVariantToLiked: ${error}`)
     }
   }
 
@@ -166,6 +201,7 @@ export const StoreProvider = ({ children }) => {
       value={{
         ...defaultValues,
         addVariantToCart,
+        addVariantToLiked,
         removeLineItem,
         cart,
         checkout,
