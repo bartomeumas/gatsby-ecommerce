@@ -5,14 +5,14 @@ import useStore from "../context/StoreContext"
 import { FcLike } from "react-icons/fc"
 
 const ProductCard = ({ product }) => {
-  const { addVariantToCart, addVariantToLiked } = useStore()
+  const { addVariantToCart, addToLiked } = useStore()
 
   return (
     <Wrapper>
       <AddButton onClick={() => addVariantToCart(product, 1)}>
         <p>+</p>
       </AddButton>
-      <LikeButton onClick={() => addVariantToLiked(product)}>
+      <LikeButton onClick={() => addToLiked(product)}>
         <FcLike />
       </LikeButton>
       <ContentWrapper onClick={() => navigate(`${product.handle}`)}>

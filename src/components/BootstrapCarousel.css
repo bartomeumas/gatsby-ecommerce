@@ -1,3 +1,15 @@
 .carousel-indicators li {
   visibility: hidden;
 }
+
+.carousel-item img {
+  z-index: 0 !important;
+  width: calc(100vw - 4rem);
+  height: 100vh;
+  float: right;
+}
+
+.carousel {
+  width: calc(100vw - 4rem);
+  float: right;
+}

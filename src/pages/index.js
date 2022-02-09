@@ -1,16 +1,18 @@
 import * as React from "react"
 
 import Layout from "../components/layout"
+import SideBar from "../components/SideBar"
 import Seo from "../components/seo"
 import BootstrapCarousel from "../components/BootstrapCarousel"
 
 const IndexPage = () => (
-  <Layout>
+  <div>
+    <SideBar />
     <Seo title="Home" />
-    <div>
+    <div style={{ overflow: "hidden", maxHeight: "100vh" }}>
       <BootstrapCarousel />
     </div>
-  </Layout>
+  </div>
 )
 
 export default IndexPage

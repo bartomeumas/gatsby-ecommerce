@@ -5,22 +5,24 @@ import useStore from "../context/StoreContext"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import ProductRow from "../components/ProductRow"
+import LikedProductRow from "../components/LikedProductRow"
 
 const Liked = () => {
   const { liked } = useStore()
 
   return (
     <Layout>
-      <Seo title="Mis productos favoritos" />
+      {console.log(liked)}
+      <Seo title="Favoritos" />
       <Wrapper>
         <HeaderWrapper>
           <Text>Producto</Text>
-          <Text>Cantidad</Text>
           <Text>Eliminar</Text>
         </HeaderWrapper>
         {liked.length > 0 ? (
-          liked.map((item, index) => <ProductRow key={index} item={item} />)
+          liked.map((item, index) => (
+            <LikedProductRow key={index} item={item} />
+          ))
         ) : (
           <Text>No tienes productos favoritos.</Text>
         )}

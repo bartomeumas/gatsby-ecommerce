@@ -11,7 +11,7 @@ const Products = ({ data }) => {
 
   return (
     <Layout>
-      <Seo title="Products" />
+      <Seo title="Productos" />
       <Wrapper>
         {nodes?.map((product, index) => (
           <ProductCard key={index} product={product} />

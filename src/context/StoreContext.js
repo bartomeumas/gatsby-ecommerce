@@ -15,7 +15,7 @@ const defaultValues = {
   liked: [],
   loading: false,
   addVariantToCart: () => {},
-  addVariantToLiked: () => {},
+  addToLiked: () => {},
   removeLineItem: () => {},
   client,
   checkout: {
@@ -122,12 +122,13 @@ export const StoreProvider = ({ children }) => {
 
       setLoading(false)
       alert("El producto se añadió al carrito.")
+      console.log(updatedCart)
     } catch (error) {
       setLoading(false)
       console.error(`Error in addVariantToCart: ${error}`)
     }
   }
-  const addVariantToLiked = async product => {
+  const addToLiked = async product => {
     setLoading(true)
 
     const variantId = product.variants[0]?.shopifyId
@@ -153,13 +154,14 @@ export const StoreProvider = ({ children }) => {
       } else {
         updatedLiked = [{ product }]
       }
-      setLiked(updatedLiked, 1)
+      setLiked(updatedLiked)
 
       setLoading(false)
       alert("El producto se añadió a tus favoritos.")
+      console.log(updatedLiked)
     } catch (error) {
       setLoading(false)
-      console.error(`Error in addVariantToLiked: ${error}`)
+      console.error(`Error in addToLiked: ${error}`)
     }
   }
 
@@ -201,7 +203,7 @@ export const StoreProvider = ({ children }) => {
       value={{
         ...defaultValues,
         addVariantToCart,
-        addVariantToLiked,
+        addToLiked,
         removeLineItem,
         cart,
         checkout,

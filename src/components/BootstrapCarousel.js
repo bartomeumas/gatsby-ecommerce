@@ -9,15 +9,15 @@ import "./BootstrapCarousel.css"
 
 export default function BootstrapCarousel() {
   return (
-    <Carousel variant="dark">
+    <Carousel className="carousel relative" variant="dark ">
       <Carousel.Item className="carousel-item ">
-        <img className="min-vh-100 " src={camisetas} alt="Camisetas" />
+        <img src={camisetas} alt="Camisetas" />
       </Carousel.Item>
-      <Carousel.Item>
-        <img className="min-vh-100 " src={gorras} alt="Gorras" />
+      <Carousel.Item className="carousel-item ">
+        <img src={gorras} alt="Gorras" />
       </Carousel.Item>
-      <Carousel.Item>
-        <img className="min-vh-100 " src={pantalones} alt="Pantalones" />
+      <Carousel.Item className="carousel-item ">
+        <img src={pantalones} alt="Pantalones" />
       </Carousel.Item>
     </Carousel>
   )

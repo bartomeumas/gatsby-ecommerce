@@ -8,7 +8,7 @@ import { MdLogin, MdLogout } from "react-icons/md"
 
 const SideBar = () => {
   return (
-    <div className="fixed top-0 left-0 h-screen w-16 m-0 flex flex-col  bg-gray-900 text-white shadow-lg">
+    <div className="fixed top-0 left-0 h-screen w-16 m-0 flex flex-col  bg-gray-900 text-white shadow-lg z-10">
       <Link to="/" exact>
         <SideBarIcon
           icon={<AiFillHome size="28" />}
@@ -45,7 +45,9 @@ const SideBar = () => {
           text="Pantalones"
         ></SideBarIcon>
       </Link>
-      <SideBarIcon icon={<MdLogin size="28" />} text="Login"></SideBarIcon>
+      <Link to="/login">
+        <SideBarIcon icon={<MdLogin size="28" />} text="Login"></SideBarIcon>
+      </Link>
     </div>
   )
 }
