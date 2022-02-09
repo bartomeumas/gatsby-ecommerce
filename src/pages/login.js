@@ -1,11 +1,14 @@
 import React, { useState } from "react"
+import { Link } from "gatsby"
 
 import SideBar from "../components/SideBar"
+import Seo from "../components/seo"
 
 export default function Login() {
   const [showpass, setShowPass] = useState(false)
   return (
     <div>
+      <Seo title="Login" />
       <SideBar />
       <div className="bg-white">
         <div className="xl:px-20 md:px-10 sm:px-6 px-4 md:py-12 py-9 2xl:mx-auto 2xl:container md:flex items-center justify-center">
@@ -39,13 +42,12 @@ export default function Login() {
               className="focus:outline-none text-sm mt-4 font-medium leading-none text-gray-500"
             >
               Dont have account?{" "}
-              <a
-                href="/signup"
+              <Link
+                to="/signup"
                 className="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none text-gray-800 cursor-pointer"
               >
-                {" "}
                 Sign up here
-              </a>
+              </Link>
             </p>
             <button
               aria-label="Continue with google"
@@ -160,7 +162,7 @@ export default function Login() {
             <div className="mt-8">
               <button
                 role="button"
-                className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full"
+                className="focus:ring-2 focus:ring-offset-2 focus:ring-green-700 text-sm font-semibold leading-none text-white focus:outline-none bg-green-600 border rounded hover:bg-green-500 py-4 w-full"
               >
                 Login to my account
               </button>

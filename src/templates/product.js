@@ -14,7 +14,9 @@ const ProductTemplate = ({ pageContext }) => {
 
   return (
     <Layout>
-      <BackButton onClick={() => navigate(-1)}>{"< "} Back</BackButton>
+      <BackButton className="mt-10" onClick={() => navigate(-1)}>
+        {"< "} Back
+      </BackButton>
       <Wrapper>
         <Image src={product.images[0]?.src} />
         <InfoContainer>

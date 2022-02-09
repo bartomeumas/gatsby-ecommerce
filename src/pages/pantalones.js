@@ -12,6 +12,9 @@ const Pantalones = ({ data }) => {
   return (
     <Layout>
       <Seo title="Pantalones" />
+      <h1 className="text-black font-light main-title  mt-5 mb-2 text-center">
+        Pantalones
+      </h1>
       <Wrapper>
         {nodes?.map((product, index) => (
           <ProductCard key={index} product={product} />
@@ -25,7 +28,7 @@ export default Pantalones
 
 export const query = graphql`
   {
-    allShopifyProduct {
+    allShopifyProduct(filter: { productType: { eq: "Pants" } }) {
       nodes {
         title
         handle
@@ -49,7 +52,7 @@ export const query = graphql`
 const Wrapper = styled.div`
   display: grid;
   margin: 40px;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(4, auto);
   justify-content: left;
   gap: 40px;
   max-width: 1234px;

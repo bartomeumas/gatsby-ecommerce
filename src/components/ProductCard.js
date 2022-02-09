@@ -57,7 +57,7 @@ const TextWrapper = styled.div`
   bottom: 0px;
   left: 0px;
   border-radius: 0 0 20px 20px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.5);
   width: 200px;
   padding: 10px 0;
   backdrop-filter: blur(40px);

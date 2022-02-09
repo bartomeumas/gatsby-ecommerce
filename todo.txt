@@ -1,3 +1,4 @@
-Arreglar carousel 
-Filtrar productos por tipo
-Añadir boton de like
+1. Click en producto debe llevar a su pagina.
+2. Manejo de sesiones
+3. Favoritos 
+4. Averiguar porque el scrollbar sigue saliendo
