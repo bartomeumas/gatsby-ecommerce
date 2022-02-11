@@ -1,11 +1,10 @@
 import React from "react"
 import styled from "styled-components"
-
 import useStore from "../context/StoreContext"
 
 const LikedProductRow = ({ item }) => {
-  const { removeLineItem } = useStore()
   const { product } = item
+  const { removeLikedItem } = useStore()
 
   return (
     <Wrapper>
@@ -14,7 +13,7 @@ const LikedProductRow = ({ item }) => {
         <Subtitle>{product.title}</Subtitle>
       </ProductWrapper>
       <DeleteButton
-        onClick={() => removeLineItem(product.variants[0]?.shopifyId)}
+        onClick={() => removeLikedItem(product.variants[0]?.shopifyId)}
       >
         Eliminar
       </DeleteButton>

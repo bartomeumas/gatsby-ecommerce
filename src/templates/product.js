@@ -14,9 +14,6 @@ const ProductTemplate = ({ pageContext }) => {
 
   return (
     <Layout>
-      <BackButton className="mt-10" onClick={() => navigate(-1)}>
-        {"< "} Back
-      </BackButton>
       <Wrapper>
         <Image src={product.images[0]?.src} />
         <InfoContainer>
@@ -40,14 +37,6 @@ const ProductTemplate = ({ pageContext }) => {
 }
 
 export default ProductTemplate
-
-const BackButton = styled.p`
-  cursor: pointer;
-  color: #014c40;
-  margin-left: 40px;
-  font-size: 14px;
-  font-weight: 600;
-`
 
 const Wrapper = styled.div`
   margin: 40px;

@@ -16,6 +16,7 @@ const defaultValues = {
   loading: false,
   addVariantToCart: () => {},
   addToLiked: () => {},
+  removeLikedItem: () => {},
   removeLineItem: () => {},
   client,
   checkout: {
@@ -25,14 +26,14 @@ const defaultValues = {
   },
 }
 
-const StoreContext = createContext(defaultValues)
+export const StoreContext = createContext(defaultValues)
 
 const isBrowser = typeof window !== `undefined`
 const localStorageKey = `shopify_checkout_id`
 
-export const StoreProvider = ({ children }) => {
+export const StoreProvider = props => {
   const [cart, setCart] = useState(defaultValues.cart)
-  const [liked, setLiked] = useState(defaultValues.liked)
+  const [liked, setLiked] = useState(defaultValues.cart)
   const [checkout, setCheckout] = useState(defaultValues.checkout)
   const [loading, setLoading] = useState(false)
 
@@ -122,12 +123,12 @@ export const StoreProvider = ({ children }) => {
 
       setLoading(false)
       alert("El producto se añadió al carrito.")
-      console.log(updatedCart)
     } catch (error) {
       setLoading(false)
       console.error(`Error in addVariantToCart: ${error}`)
     }
   }
+
   const addToLiked = async product => {
     setLoading(true)
 
@@ -158,11 +159,17 @@ export const StoreProvider = ({ children }) => {
 
       setLoading(false)
       alert("El producto se añadió a tus favoritos.")
-      console.log(updatedLiked)
     } catch (error) {
       setLoading(false)
       console.error(`Error in addToLiked: ${error}`)
     }
+  }
+
+  const removeLikedItem = variantId => {
+    const updatedLiked = liked.filter(
+      item => item.product.variants[0]?.shopifyId !== variantId
+    )
+    setLiked(updatedLiked)
   }
 
   const removeLineItem = async variantId => {
@@ -178,7 +185,6 @@ export const StoreProvider = ({ children }) => {
       })
 
       if (!lineItemID) {
-        console.log("Product not in cart")
         return
       }
 
@@ -204,13 +210,15 @@ export const StoreProvider = ({ children }) => {
         ...defaultValues,
         addVariantToCart,
         addToLiked,
+        removeLikedItem,
         removeLineItem,
+        liked,
         cart,
         checkout,
         loading,
       }}
     >
-      {children}
+      {props.children}
     </StoreContext.Provider>
   )
 }

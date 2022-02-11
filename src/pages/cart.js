@@ -13,7 +13,6 @@ const Cart = () => {
 
   return (
     <Layout>
-      {console.log(cart)}
       <Seo title="Carrito" />
       <Wrapper>
         <HeaderWrapper>

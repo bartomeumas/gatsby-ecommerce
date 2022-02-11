@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import { FaShoppingCart, FaTshirt } from "react-icons/fa"
 import { GiShorts, GiBilledCap } from "react-icons/gi"
-import { AiFillHome, AiFillLike } from "react-icons/ai"
+import { AiFillHome, AiFillLike, AiFillShopping } from "react-icons/ai"
 import { MdLogin } from "react-icons/md"
 
 const SideBar = () => {
@@ -25,6 +25,12 @@ const SideBar = () => {
         <SideBarIcon
           icon={<AiFillLike size="28" />}
           text="Favoritos"
+        ></SideBarIcon>
+      </Link>
+      <Link to="/products">
+        <SideBarIcon
+          icon={<AiFillShopping size="28" />}
+          text="Productos"
         ></SideBarIcon>
       </Link>
       <Link to="/camisetas">

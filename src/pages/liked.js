@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 
 import useStore from "../context/StoreContext"
-
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import LikedProductRow from "../components/LikedProductRow"
@@ -12,7 +11,6 @@ const Liked = () => {
 
   return (
     <Layout>
-      {console.log(liked)}
       <Seo title="Favoritos" />
       <Wrapper>
         <HeaderWrapper>

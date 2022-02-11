@@ -3,6 +3,7 @@ import { navigate } from "gatsby-link"
 import styled from "styled-components"
 import useStore from "../context/StoreContext"
 import { FcLike } from "react-icons/fc"
+import { BsCart } from "react-icons/bs"
 
 const ProductCard = ({ product }) => {
   const { addVariantToCart, addToLiked } = useStore()
@@ -10,12 +11,12 @@ const ProductCard = ({ product }) => {
   return (
     <Wrapper>
       <AddButton onClick={() => addVariantToCart(product, 1)}>
-        <p>+</p>
+        <BsCart />
       </AddButton>
       <LikeButton onClick={() => addToLiked(product)}>
         <FcLike />
       </LikeButton>
-      <ContentWrapper onClick={() => navigate(`${product.handle}`)}>
+      <ContentWrapper onClick={() => navigate(`/products/${product.handle}`)}>
         <Image src={product.images[0]?.src} />
         <TextWrapper>
           <Title>{product.title}</Title>
