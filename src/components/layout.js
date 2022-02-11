@@ -2,7 +2,7 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import "bootstrap/dist/css/bootstrap.min.css"
 
-import SideBar from "./sidebar"
+import SideBar from "./SideBar"
 import "./layout.css"
 
 const Layout = ({ children }) => {

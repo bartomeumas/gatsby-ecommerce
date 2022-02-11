@@ -1,4 +1,2 @@
-1. Click en producto debe llevar a su pagina.
-2. Manejo de sesiones
-3. Favoritos 
-4. Averiguar porque el scrollbar sigue saliendo
+1. Manejo de sesiones + Base de datos
+2. Averiguar porque el scrollbar sigue saliendo
