@@ -1,2 +1,0 @@
-1. Manejo de sesiones + Base de datos
-2. Averiguar porque el scrollbar sigue saliendo

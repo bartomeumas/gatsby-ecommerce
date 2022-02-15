@@ -4,7 +4,6 @@ import { Link } from "gatsby"
 import { FaShoppingCart, FaTshirt } from "react-icons/fa"
 import { GiShorts, GiBilledCap } from "react-icons/gi"
 import { AiFillHome, AiFillLike, AiFillShopping } from "react-icons/ai"
-import { MdLogin } from "react-icons/md"
 
 const SideBar = () => {
   return (
@@ -50,9 +49,6 @@ const SideBar = () => {
           icon={<GiShorts size="28" />}
           text="Pantalones"
         ></SideBarIcon>
-      </Link>
-      <Link to="/login">
-        <SideBarIcon icon={<MdLogin size="28" />} text="Login"></SideBarIcon>
       </Link>
     </div>
   )
