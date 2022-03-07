@@ -11,18 +11,18 @@ const Liked = () => {
 
   return (
     <Layout>
-      <Seo title="Favoritos" />
+      <Seo title="Favorites" />
       <Wrapper>
         <HeaderWrapper>
-          <Text>Producto</Text>
-          <Text>Eliminar</Text>
+          <Text>Product</Text>
+          <Text>Remove</Text>
         </HeaderWrapper>
         {liked.length > 0 ? (
           liked.map((item, index) => (
             <LikedProductRow key={index} item={item} />
           ))
         ) : (
-          <Text>No tienes productos favoritos.</Text>
+          <Text>You don't have any favorites.</Text>
         )}
       </Wrapper>
     </Layout>

@@ -1,9 +1,9 @@
 import React from "react"
 import { Carousel } from "react-bootstrap"
 
-import camisetas from "../assets/images/camisetas.jpg"
-import gorras from "../assets/images/gorras.jpg"
-import pantalones from "../assets/images/pantalones.jpg"
+import tshirts from "../assets/images/camisetas.jpg"
+import caps from "../assets/images/gorras.jpg"
+import pants from "../assets/images/pantalones.jpg"
 
 import "./BootstrapCarousel.css"
 
@@ -11,13 +11,22 @@ export default function BootstrapCarousel() {
   return (
     <Carousel className="carousel relative" variant="dark ">
       <Carousel.Item className="carousel-item ">
-        <img src={camisetas} alt="Camisetas" />
+        <img src={tshirts} alt="Tshirts" />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Shirts</h5>
+        </div>
       </Carousel.Item>
       <Carousel.Item className="carousel-item ">
-        <img src={gorras} alt="Gorras" />
+        <img src={caps} alt="Caps" />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Caps</h5>
+        </div>
       </Carousel.Item>
       <Carousel.Item className="carousel-item ">
-        <img src={pantalones} alt="Pantalones" />
+        <img src={pants} alt="Pants" />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Pants</h5>
+        </div>
       </Carousel.Item>
     </Carousel>
   )

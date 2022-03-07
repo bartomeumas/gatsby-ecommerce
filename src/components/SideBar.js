@@ -9,46 +9,34 @@ const SideBar = () => {
   return (
     <div className="fixed top-0 left-0 h-screen w-16 m-0 flex flex-col  bg-gray-900 text-white shadow-lg z-10">
       <Link to="/" exact>
-        <SideBarIcon
-          icon={<AiFillHome size="28" />}
-          text="Inicio"
-        ></SideBarIcon>
+        <SideBarIcon icon={<AiFillHome size="28" />} text="Home"></SideBarIcon>
       </Link>
       <Link to="/cart">
         <SideBarIcon
           icon={<FaShoppingCart size="28" />}
-          text="Carrito"
+          text="Cart"
         ></SideBarIcon>
       </Link>
       <Link to="/liked">
         <SideBarIcon
           icon={<AiFillLike size="28" />}
-          text="Favoritos"
+          text="Favorites"
         ></SideBarIcon>
       </Link>
       <Link to="/products">
         <SideBarIcon
           icon={<AiFillShopping size="28" />}
-          text="Productos"
+          text="Products"
         ></SideBarIcon>
       </Link>
-      <Link to="/camisetas">
-        <SideBarIcon
-          icon={<FaTshirt size="28" />}
-          text="Camisetas"
-        ></SideBarIcon>
+      <Link to="/shirts">
+        <SideBarIcon icon={<FaTshirt size="28" />} text="Shirts"></SideBarIcon>
       </Link>
-      <Link to="/gorras">
-        <SideBarIcon
-          icon={<GiBilledCap size="28" />}
-          text="Gorras"
-        ></SideBarIcon>
+      <Link to="/caps">
+        <SideBarIcon icon={<GiBilledCap size="28" />} text="Caps"></SideBarIcon>
       </Link>
-      <Link to="/pantalones">
-        <SideBarIcon
-          icon={<GiShorts size="28" />}
-          text="Pantalones"
-        ></SideBarIcon>
+      <Link to="/pants">
+        <SideBarIcon icon={<GiShorts size="28" />} text="pants"></SideBarIcon>
       </Link>
     </div>
   )

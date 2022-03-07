@@ -13,21 +13,21 @@ const Cart = () => {
 
   return (
     <Layout>
-      <Seo title="Carrito" />
+      <Seo title="Cart" />
       <Wrapper>
         <HeaderWrapper>
-          <Text>Producto</Text>
-          <Text>Cantidad</Text>
-          <Text>Eliminar</Text>
+          <Text>Product</Text>
+          <Text>Quantity</Text>
+          <Text>Delete</Text>
         </HeaderWrapper>
         {cart.length > 0 ? (
           cart.map((item, index) => <ProductRow key={index} item={item} />)
         ) : (
-          <Text>Tu carrito está vacío. Añade productos a tu carrito.</Text>
+          <Text>Your cart is empty. Add products to your cart.</Text>
         )}
         <ButtonWrapper>
           <PrimaryButton
-            text="Pagar"
+            text="Pay"
             onClick={() => window.open(checkout.webUrl)}
             disabled={cart.length === 0}
           />

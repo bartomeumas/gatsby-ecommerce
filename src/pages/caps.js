@@ -6,14 +6,14 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import ProductCard from "../components/ProductCard"
 
-const Gorras = ({ data }) => {
+const Caps = ({ data }) => {
   const { nodes } = data.allShopifyProduct
 
   return (
     <Layout>
-      <Seo title="Gorras" />
+      <Seo title="Caps" />
       <h1 className="text-black font-light main-title  mt-5 mb-2 text-center">
-        Gorras
+        Caps
       </h1>
       <Wrapper>
         {nodes?.map((product, index) => (
@@ -24,7 +24,7 @@ const Gorras = ({ data }) => {
   )
 }
 
-export default Gorras
+export default Caps
 
 export const query = graphql`
   {

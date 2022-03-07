@@ -1,4 +1,3 @@
-import { navigate } from "gatsby-link"
 import React from "react"
 import styled from "styled-components"
 
@@ -9,13 +8,16 @@ import useInput from "../utils/useInput"
 
 const ProductTemplate = ({ pageContext }) => {
   const { product } = pageContext
-  const { addVariantToCart } = useStore()
+  const { addVariantToCart, addToLiked } = useStore()
   const bind = useInput(1)
 
   return (
     <Layout>
       <Wrapper>
-        <Image src={product.images[0]?.src} />
+        <img
+          src={product.images[0]?.src}
+          className="w-40 md:w-full h-auto rounded-3xl object-cover"
+        />
         <InfoContainer>
           <Title>{product.title}</Title>
           <Subtitle>{product.priceRangeV2.maxVariantPrice.amount}0$</Subtitle>
@@ -30,6 +32,10 @@ const ProductTemplate = ({ pageContext }) => {
             text="Add to cart"
             onClick={() => addVariantToCart(product, bind.value)}
           />
+          <PrimaryButton
+            text="Add to favorites"
+            onClick={() => addToLiked(product)}
+          />
         </InfoContainer>
       </Wrapper>
     </Layout>
@@ -43,13 +49,6 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 400px auto;
   gap: 40px;
-`
-
-const Image = styled.img`
-  width: 400px;
-  height: 500px;
-  border-radius: 30px;
-  object-fit: cover;
 `
 
 const InfoContainer = styled.div`

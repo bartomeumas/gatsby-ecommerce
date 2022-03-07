@@ -46,8 +46,8 @@ const Wrapper = styled.div`
 const ContentWrapper = styled.div``
 
 const Image = styled.img`
-  width: 200px;
-  height: 300px;
+  max-width: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 20px;
   margin: 0;

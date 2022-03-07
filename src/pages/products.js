@@ -11,9 +11,9 @@ const Products = ({ data }) => {
 
   return (
     <Layout>
-      <Seo title="Productos" />
+      <Seo title="Products" />
       <h1 className="text-black font-light main-title mt-5 mb-2 text-center">
-        Productos
+        Products
       </h1>
       <Wrapper>
         {nodes?.map((product, index) => (

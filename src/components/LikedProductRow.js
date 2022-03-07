@@ -15,7 +15,7 @@ const LikedProductRow = ({ item }) => {
       <DeleteButton
         onClick={() => removeLikedItem(product.variants[0]?.shopifyId)}
       >
-        Eliminar
+        Delete
       </DeleteButton>
     </Wrapper>
   )
