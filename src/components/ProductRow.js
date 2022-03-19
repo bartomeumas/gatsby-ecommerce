@@ -17,7 +17,7 @@ const ProductRow = ({ item }) => {
       <DeleteButton
         onClick={() => removeLineItem(product.variants[0]?.shopifyId)}
       >
-        Eliminar
+        Delete
       </DeleteButton>
     </Wrapper>
   )
@@ -27,8 +27,16 @@ export default ProductRow
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 330px);
-  gap: 40px;
+  grid-template-columns: repeat(2, 150px);
+  @media (min-width: 650px) {
+    grid-template-columns: repeat(3, 200px);
+    gap: 40px;
+  }
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 330px);
+    gap: 40px;
+  }
+  gap: 20px;
   align-items: center;
 `
 
@@ -37,7 +45,13 @@ const ProductWrapper = styled.div`
   grid-template-columns: 80px auto;
   gap: 20px;
   align-items: center;
-  width: 330px;
+  width: 100px;
+  @media (min-width: 650px) {
+    width: 200px;
+  }
+  @media (min-width: 900px) {
+    width: 330px;
+  }
 `
 
 const Image = styled.img`

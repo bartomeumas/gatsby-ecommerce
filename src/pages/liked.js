@@ -12,7 +12,7 @@ const Liked = () => {
   return (
     <Layout>
       <Seo title="Favorites" />
-      <Wrapper>
+      <Wrapper className="ml-20">
         <HeaderWrapper>
           <Text>Product</Text>
           <Text>Remove</Text>
@@ -37,8 +37,12 @@ const Wrapper = styled.div`
 
 const HeaderWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 330px);
   gap: 40px;
+
+  grid-template-columns: repeat(3, 150px);
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(3, 330px);
+  }
 `
 
 const Text = styled.p`

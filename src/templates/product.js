@@ -13,17 +13,17 @@ const ProductTemplate = ({ pageContext }) => {
 
   return (
     <Layout>
-      <Wrapper>
+      <Wrapper className="ml-20">
         <img
           src={product.images[0]?.src}
-          className="w-40 md:w-full h-auto rounded-3xl object-cover"
+          className="w-full h-auto rounded-3xl object-cover"
         />
         <InfoContainer>
-          <Title>{product.title}</Title>
+          <Title className="text-lg md:text-2xl ">{product.title}</Title>
           <Subtitle>{product.priceRangeV2.maxVariantPrice.amount}0$</Subtitle>
           <p>{product.description}</p>
           <InputForm>
-            <Subtitle>
+            <Subtitle className="text-sm md:text-2xl ">
               <label htmlFor="qty">Quantity:</label>
             </Subtitle>
             <Input placeholder="1" id="qty" type="number" {...bind} />
@@ -47,8 +47,17 @@ export default ProductTemplate
 const Wrapper = styled.div`
   margin: 40px;
   display: grid;
-  grid-template-columns: 400px auto;
-  gap: 40px;
+  gap: 20px;
+  grid-template-columns: 80px auto;
+  @media (min-width: 600px) {
+    grid-template-columns: 200px auto;
+  }
+  @media (min-width: 800px) {
+    grid-template-columns: 300px auto;
+  }
+  @media (min-width: 1000px) {
+    grid-template-columns: 400px auto;
+  }
 `
 
 const InfoContainer = styled.div`

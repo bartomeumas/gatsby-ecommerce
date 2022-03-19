@@ -122,7 +122,7 @@ export const StoreProvider = props => {
       setCart(updatedCart)
 
       setLoading(false)
-      alert("El producto se añadió al carrito.")
+      alert("The product was added to your cart.")
     } catch (error) {
       setLoading(false)
       console.error(`Error in addVariantToCart: ${error}`)
@@ -158,7 +158,7 @@ export const StoreProvider = props => {
       setLiked(updatedLiked)
 
       setLoading(false)
-      alert("El producto se añadió a tus favoritos.")
+      alert("The product was added to your favorites.")
     } catch (error) {
       setLoading(false)
       console.error(`Error in addToLiked: ${error}`)

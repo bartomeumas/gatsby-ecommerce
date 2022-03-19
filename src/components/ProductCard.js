@@ -3,7 +3,7 @@ import { navigate } from "gatsby-link"
 import styled from "styled-components"
 import useStore from "../context/StoreContext"
 import { FcLike } from "react-icons/fc"
-import { BsCart } from "react-icons/bs"
+import { FaShoppingCart } from "react-icons/fa"
 
 const ProductCard = ({ product }) => {
   const { addVariantToCart, addToLiked } = useStore()
@@ -11,10 +11,10 @@ const ProductCard = ({ product }) => {
   return (
     <Wrapper>
       <AddButton onClick={() => addVariantToCart(product, 1)}>
-        <BsCart />
+        <FaShoppingCart size={22} />
       </AddButton>
       <LikeButton onClick={() => addToLiked(product)}>
-        <FcLike />
+        <FcLike size={23} />
       </LikeButton>
       <ContentWrapper onClick={() => navigate(`/products/${product.handle}`)}>
         <Image src={product.images[0]?.src} />
@@ -81,10 +81,10 @@ const AddButton = styled.div`
   position: absolute;
   top: 20px;
   right: 20px;
-  background: #014c40;
+  background: #b9b37a;
   padding: 10px;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -115,8 +115,8 @@ const LikeButton = styled.div`
   left: 20px;
   background: #014c40;
   padding: 10px;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   display: flex;
   justify-content: center;

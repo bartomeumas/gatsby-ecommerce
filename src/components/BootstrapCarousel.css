@@ -27,7 +27,10 @@
 }
 
 .carousel-caption h5 {
-  font-size: 250px;
   font-family: "Arial";
   color: white;
+  font-size: 100px;
+  @media (min-width: 1200px) {
+    font-size: 150px;
+  }
 }

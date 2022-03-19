@@ -25,17 +25,24 @@ export default LikedProductRow
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 330px);
   gap: 40px;
   align-items: center;
+  grid-template-columns: repeat(3, 150px);
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(3, 330px);
+  }
 `
 
 const ProductWrapper = styled.div`
   display: grid;
-  grid-template-columns: 80px auto;
+  grid-template-columns: 20px auto;
   gap: 20px;
   align-items: center;
-  width: 330px;
+  width: 100px;
+  @media (min-width: 600px) {
+    width: 330px;
+  }
+  grid-template-columns: 80px auto;
 `
 
 const Image = styled.img`
