@@ -18,6 +18,7 @@ const Cart = () => {
         <HeaderWrapper>
           <Text>Product</Text>
           <Text>Quantity</Text>
+          <Text>Remove</Text>
         </HeaderWrapper>
         {cart.length > 0 ? (
           cart.map((item, index) => <ProductRow key={index} item={item} />)
@@ -44,18 +45,15 @@ const Wrapper = styled.div`
 
 const HeaderWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 150px);
+  grid-template-columns: repeat(3, 75px);
+  gap: 20px;
   @media (min-width: 650px) {
     grid-template-columns: repeat(3, 200px);
   }
-  @media (min-width: 900px) {
+  @media (min-width: 912px) {
     grid-template-columns: repeat(3, 330px);
   }
-  gap: 20px;
   @media (min-width: 650px) {
-    gap: 40px;
-  }
-  @media (min-width: 900px) {
     gap: 40px;
   }
 `

@@ -7,6 +7,7 @@
   width: calc(100vw - 4rem);
   height: 100vh;
   float: right;
+  object-fit: cover;
 }
 
 .carousel-item {
@@ -24,12 +25,14 @@
   top: 50%;
   transform: translateY(-50%);
   bottom: initial;
+  display: inline-block;
 }
 
 .carousel-caption h5 {
   font-family: "Arial";
   color: white;
   font-size: 100px;
+  display: inline-block;
   @media (min-width: 1200px) {
     font-size: 150px;
   }

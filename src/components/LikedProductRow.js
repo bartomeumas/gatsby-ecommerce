@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import useStore from "../context/StoreContext"
+import { IoMdTrash } from "react-icons/io"
 
 const LikedProductRow = ({ item }) => {
   const { product } = item
@@ -15,7 +16,7 @@ const LikedProductRow = ({ item }) => {
       <DeleteButton
         onClick={() => removeLikedItem(product.variants[0]?.shopifyId)}
       >
-        Delete
+        <IoMdTrash size="28" />
       </DeleteButton>
     </Wrapper>
   )
@@ -27,9 +28,9 @@ const Wrapper = styled.div`
   display: grid;
   gap: 40px;
   align-items: center;
-  grid-template-columns: repeat(3, 150px);
+  grid-template-columns: repeat(3, 165px);
   @media (min-width: 600px) {
-    grid-template-columns: repeat(3, 330px);
+    grid-template-columns: repeat(3, 344px);
   }
 `
 
@@ -46,8 +47,12 @@ const ProductWrapper = styled.div`
 `
 
 const Image = styled.img`
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
+  @media (min-width: 600px) {
+    width: 80px;
+    height: 80px;
+  }
   object-fit: cover;
   border-radius: 20px;
 `

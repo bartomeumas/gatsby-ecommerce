@@ -36,7 +36,7 @@ const SideBar = () => {
         <SideBarIcon icon={<GiBilledCap size="28" />} text="Caps"></SideBarIcon>
       </Link>
       <Link to="/pants">
-        <SideBarIcon icon={<GiShorts size="28" />} text="pants"></SideBarIcon>
+        <SideBarIcon icon={<GiShorts size="28" />} text="Pants"></SideBarIcon>
       </Link>
     </div>
   )
